@@ -16,4 +16,11 @@ class MatrixTest {
         Matrix matrix = new Matrix(2,3);
         assertEquals(3, matrix.getNumColumns());
     }
+
+    @Test
+    void testGetLabel() {
+        Matrix matrix = new Matrix(2,3);
+        matrix.setLabel("First");
+        assertEquals("First", matrix.getLabel());
+    }
 }

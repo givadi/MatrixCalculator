@@ -4,6 +4,8 @@ public class Matrix {
     private int numRows, numColumns;
     private int[][] matrix;
 
+    private String label;
+
     Matrix(int numRows, int numColumns)
     {
         this.numRows = numRows;
@@ -27,6 +29,16 @@ public class Matrix {
     public int getNumColumns()
     {
         return this.numColumns;
+    }
+
+    public void setLabel(String label)
+    {
+        this.label = label;
+    }
+
+    public String getLabel()
+    {
+        return label;
     }
 
     private int[][] createMatrix()
