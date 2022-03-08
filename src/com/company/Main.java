@@ -116,7 +116,7 @@ public class Main {
         }
 
         System.out.println("If you would like to perform additional operations on the two matrices used"+
-                " Type 1, or if you what to use a different pair of matrices to perform operations with type 2"+
+                " Type 1,\n or if you what to use a different pair of matrices to perform operations with type 2\n"+
                 "To exit type 3");
         optSelected = in.nextInt();
         switch(optSelected){
@@ -125,6 +125,7 @@ public class Main {
                 break;
             case 2:
             case 3:
+            default:
                 status = false;
                 break;
         }
