@@ -1,6 +1,10 @@
 package com.company;
 
+import java.util.Scanner;
+
 public class Matrix {
+    private Scanner in = new Scanner(System.in);
+
     private int numRows, numColumns;
     private int[][] matrix;
 
@@ -39,6 +43,26 @@ public class Matrix {
     public String getLabel()
     {
         return label;
+    }
+
+    public void setMatrixValues()
+    {
+        for(int i=0; i<this.numRows; i++){
+            for(int j=0; j < this.numColumns; j++){
+                System.out.println("Enter value of " + this.label + " matrix at row: " + i + " and column:" + j + "");
+                setElementValue(i,j,in.nextInt());
+            }
+        }
+    }
+
+    public void setElementValue(int i, int j, int num)
+    {
+        this.matrix[i][j] = num;
+    }
+
+    public int getElementValue(int i, int j)
+    {
+        return this.matrix[i][j];
     }
 
     private int[][] createMatrix()

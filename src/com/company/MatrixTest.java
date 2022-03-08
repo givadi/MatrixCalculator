@@ -23,4 +23,11 @@ class MatrixTest {
         matrix.setLabel("First");
         assertEquals("First", matrix.getLabel());
     }
+
+    @Test
+    void testGetElementValue() {
+        Matrix matrix = new Matrix(2,3);
+        matrix.setElementValue(1,1,6);
+        assertEquals(6, matrix.getElementValue(1,1));
+    }
 }
