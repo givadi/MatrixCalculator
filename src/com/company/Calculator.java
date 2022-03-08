@@ -53,4 +53,21 @@ public class Calculator {
         }
         return result;
     }
+
+    public String multiplyMatrices()
+    {
+        String result = "";
+        if (checkIfValidToMultiply()) {
+            for (int i = 0; i < matrix1.getNumRows(); i++) {
+                for (int j = 0; j < matrix2.getNumColumns(); j++) {
+                    int fnum = matrix1.getElementValue(i, j);
+                    int snum = matrix2.getElementValue(i, j);
+                    int resultant = fnum * snum;
+                    result += resultant + " ";
+                }
+                result += "\n";
+            }
+        }
+        return result;
+    }
 }
