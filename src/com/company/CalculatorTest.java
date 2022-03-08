@@ -44,4 +44,26 @@ class CalculatorTest {
         Calculator calculator = new Calculator(matrix1, matrix2);
         assertEquals("", calculator.addMatrices());
     }
+
+    @Test
+    void testSubtractMatrices() {
+        Matrix matrix1 = new Matrix(2,2);
+        matrix1.setMatrixValues();
+        Matrix matrix2 = new Matrix(2,2);
+        matrix2.setMatrixValues();
+
+        Calculator calculator = new Calculator(matrix1, matrix2);
+        assertEquals("0 0 \n0 0 \n", calculator.subtractMatrices());
+    }
+
+    @Test
+    void testSubtractMatricesWithWrongMatrices() {
+        Matrix matrix1 = new Matrix(2,2);
+        matrix1.setMatrixValues();
+        Matrix matrix2 = new Matrix(3,3);
+        matrix2.setMatrixValues();
+
+        Calculator calculator = new Calculator(matrix1, matrix2);
+        assertEquals("", calculator.subtractMatrices());
+    }
 }
