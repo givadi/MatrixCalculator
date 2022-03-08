@@ -33,4 +33,15 @@ class CalculatorTest {
         Calculator calculator = new Calculator(matrix1, matrix2);
         assertEquals("4 4 \n4 4 \n", calculator.addMatrices());
     }
+
+    @Test
+    void testAddMatricesWithWrongMatrices() {
+        Matrix matrix1 = new Matrix(2,2);
+        matrix1.setMatrixValues();
+        Matrix matrix2 = new Matrix(3,3);
+        matrix2.setMatrixValues();
+
+        Calculator calculator = new Calculator(matrix1, matrix2);
+        assertEquals("", calculator.addMatrices());
+    }
 }

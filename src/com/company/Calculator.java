@@ -23,15 +23,17 @@ public class Calculator {
     public String addMatrices()
     {
         String result = "";
-            for(int i = 0; i < matrix1.getNumRows(); i++){
-                for(int j = 0; j < matrix1.getNumColumns(); j++){
-                    int charM1 = matrix1.getElementValue(i,j);
-                    int charM2 = matrix2.getElementValue(i,j);
+        if (checkIfValidToAdd()) {
+            for (int i = 0; i < matrix1.getNumRows(); i++) {
+                for (int j = 0; j < matrix1.getNumColumns(); j++) {
+                    int charM1 = matrix1.getElementValue(i, j);
+                    int charM2 = matrix2.getElementValue(i, j);
                     int resultant = charM1 + charM2;
                     result += resultant + " ";
                 }
                 result += "\n";
             }
-            return result;
+        }
+        return result;
     }
 }
