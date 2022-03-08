@@ -60,6 +60,13 @@ public class Main {
         matrix1.setMatrixValues();
         matrix2.setMatrixValues();
 
+        statusC = true;
+        while(statusC){
+            System.out.println("Select matrix operation, \n type in + for addition, - for subtraction or * for multiplication:");
+            operator = in.next();
+            statusC = performOperation(operator, matrix1, matrix2);
+        }
+
         System.out.println("Type 1 if you would like to continue using the calcultor,\n type 2 if you would like to exit");
         contStat = in.nextInt();
         switch(contStat){
@@ -72,5 +79,55 @@ public class Main {
                 break;
         }
         return condition;
+    }
+
+    public static boolean performOperation(String operator, Matrix matrix1, Matrix matrix2){
+        Scanner in = new Scanner(System.in);
+
+        Calculator calculator = new Calculator(matrix1, matrix2);
+
+        int optSelected;
+        boolean status = false;
+        switch(operator){
+            case "*":
+                if (!calculator.multiplyMatrices().equals("")) {
+                    System.out.println(calculator.multiplyMatrices());
+                } else {
+                    System.out.println("Invalid matrices");
+                }
+                break;
+            case "+":
+                if (!calculator.addMatrices().equals("")) {
+                    System.out.println(calculator.addMatrices());
+                } else {
+                    System.out.println("Invalid matrices");
+                }
+                break;
+            case "-":
+                if (!calculator.subtractMatrices().equals("")) {
+                    System.out.println(calculator.subtractMatrices());
+                } else {
+                    System.out.println("Invalid matrices");
+                }
+                break;
+            default:
+                System.out.println("Operator not valid");
+                break;
+        }
+
+        System.out.println("If you would like to perform additional operations on the two matrices used"+
+                " Type 1, or if you what to use a different pair of matrices to perform operations with type 2"+
+                "To exit type 3");
+        optSelected = in.nextInt();
+        switch(optSelected){
+            case 1:
+                status = true;
+                break;
+            case 2:
+            case 3:
+                status = false;
+                break;
+        }
+        return status;
     }
 }
