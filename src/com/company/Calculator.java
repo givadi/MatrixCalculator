@@ -14,4 +14,9 @@ public class Calculator {
     {
         return matrix1.getNumRows() == matrix2.getNumRows() && matrix1.getNumColumns() == matrix2.getNumColumns();
     }
+
+    public boolean checkIfValidToMultiply()
+    {
+        return matrix1.getNumColumns() == matrix2.getNumRows();
+    }
 }

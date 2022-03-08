@@ -13,4 +13,13 @@ class CalculatorTest {
         Calculator calculator = new Calculator(matrix1, matrix2);
         assertEquals(true, calculator.checkIfValidToAdd());
     }
+
+    @Test
+    void testCheckIfValidToMultiply() {
+        Matrix matrix1 = new Matrix(2,2);
+        Matrix matrix2 = new Matrix(3,2);
+
+        Calculator calculator = new Calculator(matrix1, matrix2);
+        assertEquals(false, calculator.checkIfValidToAdd());
+    }
 }
