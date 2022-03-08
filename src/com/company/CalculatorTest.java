@@ -20,6 +20,6 @@ class CalculatorTest {
         Matrix matrix2 = new Matrix(3,2);
 
         Calculator calculator = new Calculator(matrix1, matrix2);
-        assertEquals(false, calculator.checkIfValidToAdd());
+        assertEquals(false, calculator.checkIfValidToMultiply());
     }
 }
