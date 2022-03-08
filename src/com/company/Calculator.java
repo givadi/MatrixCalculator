@@ -12,10 +12,6 @@ public class Calculator {
 
     public boolean checkIfValidToAdd()
     {
-        int numRows1 = matrix1.getNumRows();
-        int numColumns1 = matrix1.getNumColumns();
-        int numRows2 = matrix2.getNumRows();
-        int numColumns2 = matrix2.getNumColumns();
-        return numRows1 == numRows2 && numColumns1 == numColumns2;
+        return matrix1.getNumRows() == matrix2.getNumRows() && matrix1.getNumColumns() == matrix2.getNumColumns();
     }
 }
